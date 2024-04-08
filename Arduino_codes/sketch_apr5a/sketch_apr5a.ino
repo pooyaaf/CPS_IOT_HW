@@ -1,18 +1,21 @@
 #include <Servo.h> // servo motor
 #include <LiquidCrystal.h> // LCD display
 
+
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // LCD pins
 
 char c;
 String RFid;
 int count = 0;
 Servo myservo;
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   myservo.attach(9);
   myservo.write(0);
-  pinMode(13, OUTPUT);
+  pinMode(13, OUTPUT); // GREEN LED
+  pinMode(10, OUTPUT); // RED LED
   Serial.println("Scan your RFid TAG");
   // Initialize the LCD display with 16 columns and 2 rows
   lcd.begin(16, 2);
@@ -41,6 +44,7 @@ void loop() {
         myservo.write(180);
         delay(3000); // door is open
         myservo.write(0);  
+        digitalWrite(13, LOW);
         // print time of entrance
         lcd.print("Time: ");
         printTime();
@@ -50,11 +54,14 @@ void loop() {
         lcd.setCursor(0, 1); // Set cursor to the second row
         lcd.print("Access Denied"); // Display access status
         Serial.println("Invalid TAG, Access Denied");
-        digitalWrite(13, LOW);
+        digitalWrite(10, HIGH);
+        delay(3000);
+        digitalWrite(10, LOW);
         myservo.write(0); // door is closed ASAP
       }
     }
   }
+ 
   //reset
   count = 0;
   RFid = "";
