@@ -36,7 +36,7 @@ void loop() {
       lcd.setCursor(0, 0); // Set cursor to the first row
       lcd.print("RFID: " + RFid); // Display RFID tag
 
-      if(RFid == "010D429BBA")
+      if(RFid == "010D429BBA")010D429BBb
       {
         lcd.setCursor(0, 1); // Set cursor to the second row
         Serial.println("Valid TAG, Access Allowed!");
