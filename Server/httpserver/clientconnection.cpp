@@ -12,6 +12,8 @@ ClientConnection::ClientConnection(QTcpSocket *socket, QObject *parent):
     connect(m_socket.get(), &QAbstractSocket::disconnected, this, &QObject::deleteLater);
     connect(m_socket.get(), &QIODevice::readyRead, this, &ClientConnection::readyRead);
 }
+
+
 void ClientConnection::readyRead()
 {
     while ((m_state == ConnectionState::RequestLine || m_state == ConnectionState::RequestHeaders)
@@ -82,39 +84,42 @@ void ClientConnection::readyRead()
 
     if (m_state == ConnectionState::RequestBody)
     {
-        m_request.body.append(m_socket->read(m_request.contentLength - m_request.body.size()));
-        Q_ASSERT(m_request.body.size() <= m_request.contentLength);
-        if (m_request.body.size() == m_request.contentLength)
+        QByteArray requestData = m_socket->read(m_request.contentLength);
+        QString receivedData = QString::fromUtf8(requestData);
+
+        // Extract the ID from the received data
+        int idStartIndex = receivedData.indexOf("\r\n\r\n") + 4; // Start index of ID
+        int idEndIndex = receivedData.indexOf("\r\n------", idStartIndex); // End index of ID
+        QString receivedId = receivedData.mid(idStartIndex, idEndIndex - idStartIndex);
+
+        // Trim leading and trailing whitespace characters
+        receivedId = receivedId.trimmed();
+
+        if (receivedId.length() == 10)
         {
-            // Trim leading and trailing whitespace characters
-            QString receivedId = QString::fromUtf8(m_request.body).trimmed();
-            if ( (receivedId.length() - 139) == 10)
+            // Validate the ID using CodeValidator
+            bool isValidId = m_validator.isValid(receivedId);
+            if (isValidId)
             {
-                // Validate the ID using CodeValidator
-                bool isValidId = m_validator.isValid(receivedId);
-                if (isValidId)
-                {
-                    qDebug() << "Received ID is valid.";
-                }
-                else
-                {
-                    qDebug() << receivedId;
-                    qDebug() << "Received ID is invalid.";
-                }
+                qDebug() << "Received ID is valid:" << receivedId;
             }
             else
             {
-                qDebug() << receivedId.length() - 139;
-                qDebug() << "Received data is not a 10-character ID.";
+                qDebug() << "Received ID is invalid:" << receivedId;
             }
-
-            // Reset the state for the next request
-            m_state = ConnectionState::Response;
-            sendResponse();
-            return;
         }
+        else
+        {
+            qDebug() << "Received data is not a 10-character ID:" << receivedId;
+        }
+
+        // Reset the state for the next request
+        m_state = ConnectionState::Response;
+        sendResponse();
+        return;
     }
 }
+
 
 
 void ClientConnection::sendResponse()
