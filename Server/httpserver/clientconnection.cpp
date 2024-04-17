@@ -2,6 +2,7 @@
 #include <QTcpSocket>
 #include <QDebug>
 #include <QRegularExpression>
+#include <QDateTime>
 #include "codevalidator.h" // Include CodeValidator header
 
 ClientConnection::ClientConnection(QTcpSocket *socket, QObject *parent):
@@ -13,7 +14,7 @@ ClientConnection::ClientConnection(QTcpSocket *socket, QObject *parent):
     connect(m_socket.get(), &QIODevice::readyRead, this, &ClientConnection::readyRead);
 }
 
-
+ClientConnection::~ClientConnection() = default;
 void ClientConnection::readyRead()
 {
     while ((m_state == ConnectionState::RequestLine || m_state == ConnectionState::RequestHeaders)
@@ -101,6 +102,8 @@ void ClientConnection::readyRead()
             bool isValidId = m_validator.isValid(receivedId);
             if (isValidId)
             {
+                m_validId = receivedId;
+                m_validLoginTimes[receivedId] = QDateTime::currentDateTime();
                 qDebug() << "Received ID is valid:" << receivedId;
             }
             else
@@ -119,8 +122,6 @@ void ClientConnection::readyRead()
         return;
     }
 }
-
-
 
 void ClientConnection::sendResponse()
 {
@@ -142,6 +143,16 @@ void ClientConnection::sendResponse()
         content += "<pre>" + QString::fromUtf8(m_request.body).toHtmlEscaped() + "</pre>";
     }
 
+    // Print the login time of the valid user
+
+    if (!m_validId.isEmpty())
+    {
+        content += "<p> <br> ----------------------</br><p>";
+        content += "<p>Valid ID: " + m_validId + "</p>";
+        content += "<p>Login time:</p>";
+        content += "<p>" + m_validLoginTimes.value(m_validId).toString() + "</p>";
+    }
+
     content += "<form method=\"POST\" enctype=\"multipart/form-data\">"
                "<input name=\"input_name\" type=\"text\" />"
                "<button type=\"submit\">SEND</button>"
@@ -157,5 +168,3 @@ void ClientConnection::sendResponse()
     m_state = ConnectionState::RequestLine;
     m_request = {};
 }
-
-ClientConnection::~ClientConnection() = default;

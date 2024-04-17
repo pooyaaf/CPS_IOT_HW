@@ -18,6 +18,9 @@ private slots:
 private:
     void sendResponse();
     const std::unique_ptr<QTcpSocket> m_socket;
+    codevalidator m_validator;
+    QString m_validId;
+    QMap<QString, QDateTime> m_validLoginTimes;
 
     struct Request
     {
@@ -40,5 +43,5 @@ private:
 
     ConnectionState m_state{ConnectionState::RequestLine};
 
-    codevalidator m_validator;
+
 };
