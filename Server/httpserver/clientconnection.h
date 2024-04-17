@@ -3,13 +3,14 @@
 #include <memory>
 #include <QMap>
 #include <QByteArray>
+#include "codevalidator.h" // Include CodeValidator header
 
 class QTcpSocket;
-class ClientConnection :public QObject
+class ClientConnection : public QObject
 {
     Q_OBJECT
 public:
-    explicit ClientConnection(QTcpSocket *socket,QObject *paernt = nullptr);
+    explicit ClientConnection(QTcpSocket *socket, QObject *parent = nullptr);
     ~ClientConnection() override;
 private slots:
     void readyRead();
@@ -38,6 +39,6 @@ private:
     };
 
     ConnectionState m_state{ConnectionState::RequestLine};
+
+    codevalidator m_validator;
 };
-
-
