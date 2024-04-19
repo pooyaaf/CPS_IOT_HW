@@ -41,3 +41,5 @@ The transponder is in the RFID tag itself. The read range for RFID tags varies b
 [^2]: [RFID ](https://www.techtarget.com/iotagenda/definition/RFID-radio-frequency-identification).
 
 ---
+
+[Answers](Answers.md)
