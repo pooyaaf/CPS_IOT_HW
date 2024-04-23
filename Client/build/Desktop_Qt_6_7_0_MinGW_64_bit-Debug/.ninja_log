@@ -1,0 +1,15 @@
+# ninja log v5
+1	2070	7355628989318528	MonitoritngSystem_autogen/timestamp	ce324ea122a65b70
+1	2070	7355628989318528	MonitoritngSystem_autogen/mocs_compilation.cpp	ce324ea122a65b70
+1	2070	7355628989318528	C:/Users/AliGH/Desktop/CPSMonitoringSystemGUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/MonitoritngSystem_autogen/timestamp	ce324ea122a65b70
+1	2070	7355628989318528	C:/Users/AliGH/Desktop/CPSMonitoringSystemGUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/MonitoritngSystem_autogen/mocs_compilation.cpp	ce324ea122a65b70
+2077	2307	7355628992378751	CMakeFiles/MonitoritngSystem.dir/icon.rc.obj	3d4b0dbe30d2043d
+2125	5069	7355629019829914	CMakeFiles/MonitoritngSystem.dir/cpsbutton.cpp.obj	a847783929489e43
+2139	5094	7355629019982419	CMakeFiles/MonitoritngSystem.dir/cpslabel.cpp.obj	9ce6a1d3c2ff6c98
+2129	5138	7355629020377263	CMakeFiles/MonitoritngSystem.dir/cpstextfield.cpp.obj	ad78315910bff65c
+2122	5810	7355629027378822	CMakeFiles/MonitoritngSystem.dir/cpsmainwindow.cpp.obj	d77f68ca30a8c1c6
+2135	6127	7355629030546763	CMakeFiles/MonitoritngSystem.dir/cpshistorywindow.cpp.obj	67e25b333f8a05e3
+2074	7593	7355629045168872	CMakeFiles/MonitoritngSystem.dir/main.cpp.obj	3df279234dc69fc9
+2145	7748	7355629046723434	CMakeFiles/MonitoritngSystem.dir/cpsapplication.cpp.obj	9dce8c33285976ec
+2071	7841	7355629047674052	CMakeFiles/MonitoritngSystem.dir/MonitoritngSystem_autogen/mocs_compilation.cpp.obj	bb216eafe60e40e9
+7841	8180	7355629051007959	MonitoritngSystem.exe	1ed2a314f0d51547
