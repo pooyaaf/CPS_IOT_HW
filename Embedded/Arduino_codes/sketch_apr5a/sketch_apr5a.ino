@@ -2,7 +2,7 @@
 #include <LiquidCrystal.h> // LCD display
 
 
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // LCD pins
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2); // LCD pins
 
 char c;
 String RFid;
@@ -14,8 +14,7 @@ void setup() {
   Serial.begin(9600);
   myservo.attach(9);
   myservo.write(0);
-  pinMode(13, OUTPUT); // GREEN LED
-  pinMode(10, OUTPUT); // RED LED
+  pinMode(8, OUTPUT); // GREEN LED
   Serial.println("Scan your RFid TAG");
   // Initialize the LCD display with 16 columns and 2 rows
   lcd.begin(16, 2);
@@ -26,12 +25,13 @@ void loop() {
   // put your main code here, to run repeatedly:
   while(Serial.available()>0)
   {
-    c = Serial.read();
-    count = count + 1;
-    RFid += c;
+    // c = Serial.read();
+    // count = count + 1;
+    // RFid += c;
+    digitalWrite(8, LOW);
+    RFid = Serial.readString();
     // length of digit is 10
-    if(count == 10)
-    {
+    
       lcd.clear(); // Clear the LCD display
       lcd.setCursor(0, 0); // Set cursor to the first row
       lcd.print("RFID: " + RFid); // Display RFID tag
@@ -40,11 +40,11 @@ void loop() {
       {
         lcd.setCursor(0, 1); // Set cursor to the second row
         Serial.println("Valid TAG, Access Allowed!");
-        digitalWrite(13, HIGH);
+        digitalWrite(8, HIGH);
         myservo.write(180);
         delay(3000); // door is open
         myservo.write(0);  
-        digitalWrite(13, LOW);
+        digitalWrite(8, LOW);
         // print time of entrance
         lcd.print("Time: ");
         printTime();
@@ -54,12 +54,10 @@ void loop() {
         lcd.setCursor(0, 1); // Set cursor to the second row
         lcd.print("Access Denied"); // Display access status
         Serial.println("Invalid TAG, Access Denied");
-        digitalWrite(10, HIGH);
-        delay(3000);
-        digitalWrite(10, LOW);
+        delay(3000);        
         myservo.write(0); // door is closed ASAP
       }
-    }
+    
   }
  
   //reset
