@@ -73,7 +73,15 @@ void MainWindow::setUsername(const QString &username)
 
 void MainWindow::changeRightPanelEnabled(bool enabled)
 {
-    _rightPanel->setEnabled(enabled);
+    if (enabled) {
+        connect(_connectBtn, &QPushButton::clicked, this, &MainWindow::connectClicked);
+        _connectBtn->setText("اتصال به سرور");
+        _connectBtn->setStyleSheet("QPushButton { color: #E0E0E0; background-color: #155F0F;  }\
+                                   QPushButton:hover {background-color: #157F0F;}");
+    } else {        
+        _connectBtn->setText("!خوش آمدید");
+        _connectBtn->setStyleSheet("QPushButton { color: #E0E0E0; background-color: #2B2B2B;  }");
+    }
 }
 
 void MainWindow::showUserDetails(const QString &username, const QString &date, const QString &time)
@@ -89,15 +97,15 @@ void MainWindow::showUserDetails(const QString &username, const QString &date, c
  * =============================================
  */
 
+void MainWindow::connectClicked()
+{
+    disconnect(_connectBtn, &QPushButton::clicked, 0, 0);
+    Q_EMIT connectBtnClicked(_addressInput->text(), _usernameInput->text(), _passwordInput->text());
+}
+
 void MainWindow::setupConnections()
 {
-    auto connectFn = [this]() {
-        Q_EMIT connectBtnClicked(_addressInput->text(),
-                                 _usernameInput->text(),
-                                 _passwordInput->text());
-    };
-
-    connect(_connectBtn, &QPushButton::clicked, connectFn);
+    changeRightPanelEnabled(true);
     connect(_historyBtn, &QPushButton::clicked, this, &MainWindow::historyuBtnClicked);
 }
 

@@ -1,9 +1,11 @@
 #ifndef CPSAPPLICATION_H
 #define CPSAPPLICATION_H
 
-#include <QObject>
 #include <QApplication>
+#include <QJsonArray>
+#include <QObject>
 
+#include "client.h"
 #include "cpshistorywindow.h"
 #include "cpsmainwindow.h"
 
@@ -24,15 +26,14 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void showHistoryWindow();
+    void updateHistoryWindow(QJsonArray data);
 
 private: // methods
 
 private: // members
     MainWindow    *_window;
     HistoryWindow *_history;
-
-    //TODO:
-    //YourSocketClass *_YourSocketClassInstance;
+    Client *_client;
 };
 
 } // end of CPS

@@ -1,24 +1,38 @@
 #ifndef SERVER_H
 #define SERVER_H
 
-#include <QObject>
-#include <QtWebSockets/QWebSocket>
+#include <QtCore/QByteArray>
+#include <QtCore/QList>
+#include <QtCore/QObject>
 #include <QtWebSockets/QWebSocketServer>
+#include <QtWebSockets/QtWebSockets>
+#include "database.h"
 
-class WebSocketServer : public QObject
+QT_FORWARD_DECLARE_CLASS(QWebSocketServer)
+QT_FORWARD_DECLARE_CLASS(QWebSocket)
+
+class Server : public QObject
 {
     Q_OBJECT
 public:
-    explicit WebSocketServer(QObject *parent = nullptr);
-    ~WebSocketServer();
+    explicit Server(Database *database, quint16 port, bool debug = false, QObject *parent = nullptr);
+    ~Server();
 
-private slots:
+Q_SIGNALS:
+    void closed();
+
+private Q_SLOTS:
     void onNewConnection();
-    void processTextMessage(const QString &message);
+    void processTextMessage(QString message);
+    void processBinaryMessage(QByteArray message);
     void socketDisconnected();
 
 private:
-    QWebSocketServer *server;
+    QWebSocketServer *m_pWebSocketServer;
+    QList<QWebSocket *> m_clients;
+    bool m_debug;
+    Database *database;
+    inline static const QString USERNAME = "admin", PASSWORD = "admin";
 };
 
 #endif // SERVER_H

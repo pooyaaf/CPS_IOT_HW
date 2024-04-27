@@ -30,6 +30,9 @@ public Q_SLOTS:
     void changeRightPanelEnabled(bool enabled);
     void showUserDetails(const QString &username, const QString &date, const QString &time);
 
+private Q_SLOTS:
+    void connectClicked();
+
 private: // methods
     void setupConnections();
     void setupGlobalStyle();

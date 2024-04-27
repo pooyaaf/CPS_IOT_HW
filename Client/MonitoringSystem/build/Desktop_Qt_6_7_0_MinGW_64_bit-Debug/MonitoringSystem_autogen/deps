@@ -1,7 +1,13 @@
 MonitoringSystem_autogen/timestamp: \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/QFlags \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/QJsonArray \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/QJsonObject \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/QObject \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/QSharedDataPointer \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/QString \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/QUrl \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/QVariant \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/q20functional.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/q20memory.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/q20type_traits.h \
@@ -38,6 +44,7 @@ MonitoringSystem_autogen/timestamp: \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qcoreapplication.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qcoreevent.h \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/qcryptographichash.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qdarwinhelpers.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qdatastream.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qdatetime.h \
@@ -63,6 +70,7 @@ MonitoringSystem_autogen/timestamp: \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qiterable.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qiterator.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qjsonarray.h \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/qjsondocument.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qjsonobject.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qjsonvalue.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qlatin1stringview.h \
@@ -175,6 +183,29 @@ MonitoringSystem_autogen/timestamp: \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/QAbstractSocket \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/QNetworkProxy \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/QNetworkRequest \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/QSslConfiguration \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/QSslError \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/qabstractsocket.h \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/qhostaddress.h \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/qnetworkproxy.h \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/qnetworkrequest.h \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/qssl.h \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslcertificate.h \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslconfiguration.h \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslerror.h \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslsocket.h \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/qtcpsocket.h \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetwork-config.h \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetworkexports.h \
+	C:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+	C:/Qt/6.7.0/mingw_64/include/QtWebSockets/QWebSocket \
+	C:/Qt/6.7.0/mingw_64/include/QtWebSockets/qtwebsocketsexports.h \
+	C:/Qt/6.7.0/mingw_64/include/QtWebSockets/qwebsocket.h \
+	C:/Qt/6.7.0/mingw_64/include/QtWebSockets/qwebsocketprotocol.h \
+	C:/Qt/6.7.0/mingw_64/include/QtWebSockets/qwebsockets_global.h \
 	C:/Qt/6.7.0/mingw_64/include/QtWidgets/QApplication \
 	C:/Qt/6.7.0/mingw_64/include/QtWidgets/QLabel \
 	C:/Qt/6.7.0/mingw_64/include/QtWidgets/QLineEdit \
@@ -319,6 +350,39 @@ MonitoringSystem_autogen/timestamp: \
 	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake \
 	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake \
 	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginAdditionalTargetInfo.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginConfig.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets-relwithdebinfo.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginAdditionalTargetInfo.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginConfig.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets-relwithdebinfo.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsAdditionalTargetInfo.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsConfig.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsConfigVersion.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsConfigVersionImpl.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsDependencies.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsTargets-relwithdebinfo.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsTargets.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsVersionlessTargets.cmake \
 	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake \
 	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake \
 	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake \
@@ -584,6 +648,8 @@ MonitoringSystem_autogen/timestamp: \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeRCCompiler.cmake \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeSystem.cmake \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/MonitoringSystem_autogen/moc_predefs.h \
+	C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/client.cpp \
+	C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/client.h \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/cpsapplication.cpp \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/cpsapplication.h \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/cpsbutton.cpp \
@@ -597,5 +663,7 @@ MonitoringSystem_autogen/timestamp: \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/cpstextfield.cpp \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/cpstextfield.h \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/cpswindowsapitools.h \
+	C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/echoclient.cpp \
+	C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/echoclient.h \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/main.cpp \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

@@ -1,8 +1,14 @@
 C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/MonitoringSystem_autogen/EWIEGA46WW/moc_cpsapplication.cpp: C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/cpsapplication.h \
   C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/MonitoringSystem_autogen/moc_predefs.h \
+  C:/Qt/6.7.0/mingw_64/include/QtCore/QFlags \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QJsonArray \
+  C:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QJsonObject \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QObject \
+  C:/Qt/6.7.0/mingw_64/include/QtCore/QSharedDataPointer \
+  C:/Qt/6.7.0/mingw_64/include/QtCore/QString \
+  C:/Qt/6.7.0/mingw_64/include/QtCore/QUrl \
+  C:/Qt/6.7.0/mingw_64/include/QtCore/QVariant \
   C:/Qt/6.7.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/q20memory.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/q20type_traits.h \
@@ -39,6 +45,7 @@ C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/build/Desktop_Qt_6_7_0
   C:/Qt/6.7.0/mingw_64/include/QtCore/qcoreapplication.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qcoreevent.h \
+  C:/Qt/6.7.0/mingw_64/include/QtCore/qcryptographichash.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qdarwinhelpers.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qdatastream.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qdatetime.h \
@@ -64,6 +71,7 @@ C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/build/Desktop_Qt_6_7_0
   C:/Qt/6.7.0/mingw_64/include/QtCore/qiterable.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qiterator.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qjsonarray.h \
+  C:/Qt/6.7.0/mingw_64/include/QtCore/qjsondocument.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qjsonobject.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qjsonvalue.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qlatin1stringview.h \
@@ -176,6 +184,29 @@ C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/build/Desktop_Qt_6_7_0
   C:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
   C:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/QAbstractSocket \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/QNetworkProxy \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/QNetworkRequest \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/QSslConfiguration \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/QSslError \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/qabstractsocket.h \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/qhostaddress.h \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/qnetworkproxy.h \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/qnetworkrequest.h \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/qssl.h \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslcertificate.h \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslconfiguration.h \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslerror.h \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslsocket.h \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/qtcpsocket.h \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetwork-config.h \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetworkexports.h \
+  C:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWebSockets/QWebSocket \
+  C:/Qt/6.7.0/mingw_64/include/QtWebSockets/qtwebsocketsexports.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWebSockets/qwebsocket.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWebSockets/qwebsocketprotocol.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWebSockets/qwebsockets_global.h \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/QApplication \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/QLineEdit \
@@ -412,6 +443,7 @@ C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/build/Desktop_Qt_6_7_0
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
+  C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/client.h \
   C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/cpsbutton.h \
   C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/cpshistorywindow.h \
   C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/cpslabel.h \

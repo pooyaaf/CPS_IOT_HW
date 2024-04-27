@@ -1,40 +1,83 @@
 #include "websocketserver.h"
-#include <QDebug>
+#include <QException>
+#include <QtCore/QDebug>
+#include "database.h"
 
-WebSocketServer::WebSocketServer(QObject *parent)
+QT_USE_NAMESPACE
+
+Server::Server(Database *database, quint16 port, bool debug, QObject *parent)
     : QObject(parent)
+    , m_pWebSocketServer(
+          new QWebSocketServer(QStringLiteral("Echo Server"), QWebSocketServer::NonSecureMode, this))
+    , m_debug(debug)
+    , database(database)
 {
-    server = new QWebSocketServer(QStringLiteral("RFID Server"),
-                                  QWebSocketServer::NonSecureMode,
-                                  this);
-    if (!server->listen(QHostAddress::Any, 1234)) {
-        qFatal("Failed to bind to port %d", 1234);
+    if (m_pWebSocketServer->listen(QHostAddress::Any, port)) {
+        if (m_debug)
+            qDebug() << "Server listening on port" << port;
+        connect(m_pWebSocketServer,
+                &QWebSocketServer::newConnection,
+                this,
+                &Server::onNewConnection);
+        connect(m_pWebSocketServer, &QWebSocketServer::closed, this, &Server::closed);
     }
-    connect(server, &QWebSocketServer::newConnection, this, &WebSocketServer::onNewConnection);
 }
 
-WebSocketServer::~WebSocketServer()
+Server::~Server()
 {
-    server->close();
+    m_pWebSocketServer->close();
+    qDeleteAll(m_clients.begin(), m_clients.end());
 }
 
-void WebSocketServer::onNewConnection()
+void Server::onNewConnection()
 {
-    QWebSocket *socket = server->nextPendingConnection();
-    connect(socket, &QWebSocket::textMessageReceived, this, &WebSocketServer::processTextMessage);
-    connect(socket, &QWebSocket::disconnected, this, &WebSocketServer::socketDisconnected);
+    QWebSocket *pSocket = m_pWebSocketServer->nextPendingConnection();
+
+    connect(pSocket, &QWebSocket::textMessageReceived, this, &Server::processTextMessage);
+    connect(pSocket, &QWebSocket::binaryMessageReceived, this, &Server::processBinaryMessage);
+    connect(pSocket, &QWebSocket::disconnected, this, &Server::socketDisconnected);
+
+    m_clients << pSocket;
 }
 
-void WebSocketServer::processTextMessage(const QString &message)
+void Server::processTextMessage(QString message)
 {
-    qDebug() << "Received message:" << message;
-    // Process the received RFID value here
+    QWebSocket *pClient = qobject_cast<QWebSocket *>(sender());
+    if (m_debug)
+        qDebug() << "Message received:" << message;
+
+    if (pClient) {
+        auto recvd_mesg = message.split("|");
+        if (recvd_mesg[0] == "login") {
+            auto is_valid = recvd_mesg[1] == USERNAME && recvd_mesg[2] == PASSWORD;
+            pClient->sendTextMessage(is_valid ? "login|ok" : "login|no");
+        } else if (recvd_mesg[0] == "log") {
+            qDebug() << database->getLogs();
+            pClient->sendTextMessage("log|" + database->getLogs());
+        } else {
+            qDebug() << "not handle exception!";
+            throw new QException();
+        }
+    }
 }
 
-void WebSocketServer::socketDisconnected()
+void Server::processBinaryMessage(QByteArray message)
 {
-    QWebSocket *socket = qobject_cast<QWebSocket *>(sender());
-    if (socket) {
-        socket->deleteLater();
+    QWebSocket *pClient = qobject_cast<QWebSocket *>(sender());
+    if (m_debug)
+        qDebug() << "Binary Message received:" << message;
+    if (pClient) {
+        pClient->sendBinaryMessage(message);
+    }
+}
+
+void Server::socketDisconnected()
+{
+    QWebSocket *pClient = qobject_cast<QWebSocket *>(sender());
+    if (m_debug)
+        qDebug() << "socketDisconnected:" << pClient;
+    if (pClient) {
+        m_clients.removeAll(pClient);
+        pClient->deleteLater();
     }
 }
