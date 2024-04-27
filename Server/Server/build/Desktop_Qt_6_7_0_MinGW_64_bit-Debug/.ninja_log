@@ -1,0 +1,20 @@
+# ninja log v5
+1	504	7355885380622573	Server_autogen/timestamp	5455849244c4573
+1	504	7355885380622573	Server_autogen/mocs_compilation.cpp	5455849244c4573
+1	504	7355885380622573	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Server_autogen/timestamp	5455849244c4573
+1	504	7355885380622573	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Server_autogen/mocs_compilation.cpp	5455849244c4573
+510	2186	7355885397862759	CMakeFiles/Server.dir/main.cpp.obj	289f9b2bc82820f
+25	1622	7355886373091478	Server_autogen/timestamp	5455849244c4573
+25	1622	7355886373091478	Server_autogen/mocs_compilation.cpp	5455849244c4573
+25	1622	7355886373091478	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Server_autogen/timestamp	5455849244c4573
+25	1622	7355886373091478	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Server_autogen/mocs_compilation.cpp	5455849244c4573
+1637	7017	7355886427825491	CMakeFiles/Server.dir/main.cpp.obj	289f9b2bc82820f
+1633	7200	7355886429648420	CMakeFiles/Server.dir/Server_autogen/mocs_compilation.cpp.obj	6637139ce9b3081c
+1641	7433	7355886431977240	CMakeFiles/Server.dir/websocketserver.cpp.obj	68311e482ba9f17d
+13	720	7355890103244616	Server_autogen/timestamp	5455849244c4573
+13	720	7355890103244616	Server_autogen/mocs_compilation.cpp	5455849244c4573
+13	720	7355890103244616	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Server_autogen/timestamp	5455849244c4573
+13	720	7355890103244616	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Server_autogen/mocs_compilation.cpp	5455849244c4573
+727	3256	7355890129077600	CMakeFiles/Server.dir/main.cpp.obj	289f9b2bc82820f
+721	3367	7355890130178893	CMakeFiles/Server.dir/Server_autogen/mocs_compilation.cpp.obj	6637139ce9b3081c
+724	3409	7355890130583232	CMakeFiles/Server.dir/websocketserver.cpp.obj	68311e482ba9f17d

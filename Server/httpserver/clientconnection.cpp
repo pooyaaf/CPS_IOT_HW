@@ -21,6 +21,7 @@ void ClientConnection::readyRead()
            && m_socket->canReadLine())
     {
         auto line = m_socket->readLine();
+        qDebug() << line << "\n";
         if (line.endsWith("\r\n"))
             line.chop(2);
 

@@ -136,7 +136,15 @@
 	"CMAKE_SOURCE_DIR" : "C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server",
 	"DEP_FILE" : "C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Server_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "Server_autogen/timestamp",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/websocketserver.h",
+			"MU",
+			"EWIEGA46WW/moc_websocketserver.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Server_autogen/include",
 	"MOC_COMPILATION_FILE" : "C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Server_autogen/mocs_compilation.cpp",
@@ -205,6 +213,11 @@
 	[
 		[
 			"C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/websocketserver.cpp",
 			"MU",
 			null
 		]

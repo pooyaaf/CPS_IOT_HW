@@ -12,7 +12,7 @@ WebServer::~WebServer() = default;
 
 void WebServer::start()
 {
-    m_server->listen(QHostAddress::Any, 8080);
+    m_server->listen(QHostAddress::Any, 80);
 }
 
 void WebServer::newConnection()
