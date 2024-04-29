@@ -6,12 +6,11 @@ HttpServer::HttpServer(Database *database, QObject *parent)
 {
     QHttpServer *httpServer = new QHttpServer();
     httpServer->route("/enter_door", [this](const QHttpServerRequest &request) {
-        for (auto pair : request.query().queryItems()) {
-            if (pair.first == "rfid") {
-                auto rfid = pair.second;
-                qDebug() << "rcvd: " + rfid;
-                return this->database->isValid(rfid) ? "ok" : "no";
-            }
+        auto req = request.query().queryItems().at(0);
+        if (req.first == "rfid") {
+            auto rfid = req.second;
+            qDebug() << "rcvd: " + rfid;
+            return this->database->isValid(rfid) ? "ok" : "no";
         }
 
         return "no";
@@ -26,6 +25,6 @@ HttpServer::HttpServer(Database *database, QObject *parent)
     if (!port) {
         qWarning() << "QHttpServerExample Server failed to listen on a port.";
     } else {
-        qDebug() << "http server listening on " + QString::number(port);
+        qDebug() << "http server listening on " << port;
     }
 }

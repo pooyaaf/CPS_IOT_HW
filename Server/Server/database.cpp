@@ -14,9 +14,12 @@ Database::Database()
 bool Database::isValid(QString rfid)
 {
     for (int i = 0; i < members.size(); i++)
-        if (members.at(i)["rfid"] == rfid)
+        if (members.at(i)["rfid"] == rfid) {
+            addLogInTime(members.at(i)["username"].toString());
             return true;
+        }
 
+    addLogInTime("not found!");
     return false;
 }
 
