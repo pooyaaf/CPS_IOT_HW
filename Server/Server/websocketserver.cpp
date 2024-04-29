@@ -14,7 +14,7 @@ WebsocketServer::WebsocketServer(Database *database, quint16 port, bool debug, Q
 {
     if (m_pWebSocketServer->listen(QHostAddress::Any, port)) {
         if (m_debug)
-            qDebug() << "Server listening on port" << port;
+            qDebug() << "websocket server listening on port" << port;
         connect(m_pWebSocketServer,
                 &QWebSocketServer::newConnection,
                 this,

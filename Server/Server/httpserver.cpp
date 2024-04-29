@@ -4,19 +4,28 @@ HttpServer::HttpServer(Database *database, QObject *parent)
     : QObject{parent}
     , database(database)
 {
-    QHttpServer httpServer;
-    httpServer.route("/enter_door", [this](const QHttpServerRequest &request) {
-        auto rfid = QString::fromUtf8(request.value("rfid").simplified().toStdString());
-        return this->database->isValid(rfid) ? "ok" : "no";
+    QHttpServer *httpServer = new QHttpServer();
+    httpServer->route("/enter_door", [this](const QHttpServerRequest &request) {
+        qDebug() << "rcvd";
+        for (auto pair : request.query().queryItems()) {
+            if (pair.first == "rfid") {
+                auto rfid = pair.second;
+                return this->database->isValid(rfid) ? "ok" : "no";
+            }
+        }
+
+        return "no";
     });
 
-    httpServer.afterRequest([](QHttpServerResponse &&resp) {
+    httpServer->afterRequest([](QHttpServerResponse &&resp) {
         resp.setHeader("Server", "Qt HTTP Server");
         return std::move(resp);
     });
 
-    const auto port = httpServer.listen(QHostAddress::Any);
+    const auto port = httpServer->listen(QHostAddress::Any, 80);
     if (!port) {
         qWarning() << "QHttpServerExample Server failed to listen on a port.";
+    } else {
+        qDebug() << "http server listening on " + QString::number(port);
     }
 }
