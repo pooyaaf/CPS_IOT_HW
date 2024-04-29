@@ -1,6 +1,25 @@
 #include "database.h"
 QT_USE_NAMESPACE
 
+Database::Database()
+{
+    for (int i = 0; i < 10; ++i) {
+        QJsonObject member;
+        member["username"] = "ali" + QString::number(i);
+        member["rfid"] = "123456789" + QString::number(i);
+        members.append(member);
+    }
+}
+
+bool Database::isValid(QString rfid)
+{
+    for (int i = 0; i < members.size(); i++)
+        if (members.at(i)["rfid"] == rfid)
+            return true;
+
+    return false;
+}
+
 void Database::addLogInTime(const QString username)
 {
     auto currentTime = QDateTime::currentDateTime();

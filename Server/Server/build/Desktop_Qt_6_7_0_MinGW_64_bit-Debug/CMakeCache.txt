@@ -304,6 +304,9 @@ Qt6Core_DIR:PATH=C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Core
 //The directory containing a CMake configuration file for Qt6EntryPointPrivate.
 Qt6EntryPointPrivate_DIR:PATH=C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6EntryPointPrivate
 
+//The directory containing a CMake configuration file for Qt6HttpServer.
+Qt6HttpServer_DIR:PATH=C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6HttpServer
+
 //The directory containing a CMake configuration file for Qt6Network.
 Qt6Network_DIR:PATH=C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network
 

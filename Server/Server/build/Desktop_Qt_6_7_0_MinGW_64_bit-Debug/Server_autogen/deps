@@ -280,6 +280,20 @@ Server_autogen/timestamp: \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qxpfunctional.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qxptype_traits.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qyieldcpu.h \
+	C:/Qt/6.7.0/mingw_64/include/QtHttpServer/QHttpServer \
+	C:/Qt/6.7.0/mingw_64/include/QtHttpServer/QHttpServerResponse \
+	C:/Qt/6.7.0/mingw_64/include/QtHttpServer/qabstracthttpserver.h \
+	C:/Qt/6.7.0/mingw_64/include/QtHttpServer/qhttpserver.h \
+	C:/Qt/6.7.0/mingw_64/include/QtHttpServer/qhttpserverrequest.h \
+	C:/Qt/6.7.0/mingw_64/include/QtHttpServer/qhttpserverresponder.h \
+	C:/Qt/6.7.0/mingw_64/include/QtHttpServer/qhttpserverresponse.h \
+	C:/Qt/6.7.0/mingw_64/include/QtHttpServer/qhttpserverrouter.h \
+	C:/Qt/6.7.0/mingw_64/include/QtHttpServer/qhttpserverrouterrule.h \
+	C:/Qt/6.7.0/mingw_64/include/QtHttpServer/qhttpserverrouterviewtraits.h \
+	C:/Qt/6.7.0/mingw_64/include/QtHttpServer/qhttpserverviewtraits.h \
+	C:/Qt/6.7.0/mingw_64/include/QtHttpServer/qhttpserverviewtraits_impl.h \
+	C:/Qt/6.7.0/mingw_64/include/QtHttpServer/qthttpserverexports.h \
+	C:/Qt/6.7.0/mingw_64/include/QtHttpServer/qthttpserverglobal.h \
 	C:/Qt/6.7.0/mingw_64/include/QtNetwork/QAbstractSocket \
 	C:/Qt/6.7.0/mingw_64/include/QtNetwork/QHostAddress \
 	C:/Qt/6.7.0/mingw_64/include/QtNetwork/QNetworkAccessManager \
@@ -401,6 +415,14 @@ Server_autogen/timestamp: \
 	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-relwithdebinfo.cmake \
 	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake \
 	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateVersionlessTargets.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6HttpServer/Qt6HttpServerAdditionalTargetInfo.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6HttpServer/Qt6HttpServerConfig.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6HttpServer/Qt6HttpServerConfigVersion.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6HttpServer/Qt6HttpServerConfigVersionImpl.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6HttpServer/Qt6HttpServerDependencies.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6HttpServer/Qt6HttpServerTargets-relwithdebinfo.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6HttpServer/Qt6HttpServerTargets.cmake \
+	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6HttpServer/Qt6HttpServerVersionlessTargets.cmake \
 	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake \
 	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake \
 	C:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake \
@@ -803,6 +825,8 @@ Server_autogen/timestamp: \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Server_autogen/moc_predefs.h \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/database.cpp \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/database.h \
+	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/httpserver.cpp \
+	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/httpserver.h \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/main.cpp \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/websocketserver.cpp \
 	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/websocketserver.h \

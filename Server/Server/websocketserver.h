@@ -11,12 +11,12 @@
 QT_FORWARD_DECLARE_CLASS(QWebSocketServer)
 QT_FORWARD_DECLARE_CLASS(QWebSocket)
 
-class Server : public QObject
+class WebsocketServer : public QObject
 {
     Q_OBJECT
 public:
-    explicit Server(Database *database, quint16 port, bool debug = false, QObject *parent = nullptr);
-    ~Server();
+    explicit WebsocketServer(Database *database, quint16 port, bool debug = false, QObject *parent = nullptr);
+    ~WebsocketServer();
 
 Q_SIGNALS:
     void closed();

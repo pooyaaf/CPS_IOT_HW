@@ -5,7 +5,7 @@
 
 QT_USE_NAMESPACE
 
-Server::Server(Database *database, quint16 port, bool debug, QObject *parent)
+WebsocketServer::WebsocketServer(Database *database, quint16 port, bool debug, QObject *parent)
     : QObject(parent)
     , m_pWebSocketServer(
           new QWebSocketServer(QStringLiteral("Echo Server"), QWebSocketServer::NonSecureMode, this))
@@ -18,29 +18,34 @@ Server::Server(Database *database, quint16 port, bool debug, QObject *parent)
         connect(m_pWebSocketServer,
                 &QWebSocketServer::newConnection,
                 this,
-                &Server::onNewConnection);
-        connect(m_pWebSocketServer, &QWebSocketServer::closed, this, &Server::closed);
+                &WebsocketServer::onNewConnection);
+        connect(m_pWebSocketServer, &QWebSocketServer::closed, this, &WebsocketServer::closed);
+    } else {
+        qDebug() << "Error listening...";
     }
 }
 
-Server::~Server()
+WebsocketServer::~WebsocketServer()
 {
     m_pWebSocketServer->close();
     qDeleteAll(m_clients.begin(), m_clients.end());
 }
 
-void Server::onNewConnection()
+void WebsocketServer::onNewConnection()
 {
     QWebSocket *pSocket = m_pWebSocketServer->nextPendingConnection();
 
-    connect(pSocket, &QWebSocket::textMessageReceived, this, &Server::processTextMessage);
-    connect(pSocket, &QWebSocket::binaryMessageReceived, this, &Server::processBinaryMessage);
-    connect(pSocket, &QWebSocket::disconnected, this, &Server::socketDisconnected);
+    connect(pSocket, &QWebSocket::textMessageReceived, this, &WebsocketServer::processTextMessage);
+    connect(pSocket,
+            &QWebSocket::binaryMessageReceived,
+            this,
+            &WebsocketServer::processBinaryMessage);
+    connect(pSocket, &QWebSocket::disconnected, this, &WebsocketServer::socketDisconnected);
 
     m_clients << pSocket;
 }
 
-void Server::processTextMessage(QString message)
+void WebsocketServer::processTextMessage(QString message)
 {
     QWebSocket *pClient = qobject_cast<QWebSocket *>(sender());
     if (m_debug)
@@ -52,7 +57,6 @@ void Server::processTextMessage(QString message)
             auto is_valid = recvd_mesg[1] == USERNAME && recvd_mesg[2] == PASSWORD;
             pClient->sendTextMessage(is_valid ? "login|ok" : "login|no");
         } else if (recvd_mesg[0] == "log") {
-            qDebug() << database->getLogs();
             pClient->sendTextMessage("log|" + database->getLogs());
         } else {
             qDebug() << "not handle exception!";
@@ -61,7 +65,7 @@ void Server::processTextMessage(QString message)
     }
 }
 
-void Server::processBinaryMessage(QByteArray message)
+void WebsocketServer::processBinaryMessage(QByteArray message)
 {
     QWebSocket *pClient = qobject_cast<QWebSocket *>(sender());
     if (m_debug)
@@ -71,7 +75,7 @@ void Server::processBinaryMessage(QByteArray message)
     }
 }
 
-void Server::socketDisconnected()
+void WebsocketServer::socketDisconnected()
 {
     QWebSocket *pClient = qobject_cast<QWebSocket *>(sender());
     if (m_debug)

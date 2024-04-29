@@ -35,9 +35,9 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASSServerENDCLASS_t {};
-constexpr auto qt_meta_stringdata_CLASSServerENDCLASS = QtMocHelpers::stringData(
-    "Server",
+struct qt_meta_stringdata_CLASSWebsocketServerENDCLASS_t {};
+constexpr auto qt_meta_stringdata_CLASSWebsocketServerENDCLASS = QtMocHelpers::stringData(
+    "WebsocketServer",
     "closed",
     "",
     "onNewConnection",
@@ -51,7 +51,7 @@ constexpr auto qt_meta_stringdata_CLASSServerENDCLASS = QtMocHelpers::stringData
 #endif // !QT_MOC_HAS_STRINGDATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASSServerENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASSWebsocketServerENDCLASS[] = {
 
  // content:
       12,       // revision
@@ -85,15 +85,15 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSServerENDCLASS[] = {
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject Server::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject WebsocketServer::staticMetaObject = { {
     QMetaObject::SuperData::link<QObject::staticMetaObject>(),
-    qt_meta_stringdata_CLASSServerENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASSServerENDCLASS,
+    qt_meta_stringdata_CLASSWebsocketServerENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSWebsocketServerENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSServerENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSWebsocketServerENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<Server, std::true_type>,
+        QtPrivate::TypeAndForceComplete<WebsocketServer, std::true_type>,
         // method 'closed'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onNewConnection'
@@ -110,10 +110,10 @@ Q_CONSTINIT const QMetaObject Server::staticMetaObject = { {
     nullptr
 } };
 
-void Server::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void WebsocketServer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<Server *>(_o);
+        auto *_t = static_cast<WebsocketServer *>(_o);
         (void)_t;
         switch (_id) {
         case 0: _t->closed(); break;
@@ -126,8 +126,8 @@ void Server::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (Server::*)();
-            if (_t _q_method = &Server::closed; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            using _t = void (WebsocketServer::*)();
+            if (_t _q_method = &WebsocketServer::closed; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
@@ -135,20 +135,20 @@ void Server::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
     }
 }
 
-const QMetaObject *Server::metaObject() const
+const QMetaObject *WebsocketServer::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *Server::qt_metacast(const char *_clname)
+void *WebsocketServer::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASSServerENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSWebsocketServerENDCLASS.stringdata0))
         return static_cast<void*>(this);
     return QObject::qt_metacast(_clname);
 }
 
-int Server::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int WebsocketServer::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QObject::qt_metacall(_c, _id, _a);
     if (_id < 0)
@@ -166,7 +166,7 @@ int Server::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void Server::closed()
+void WebsocketServer::closed()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
