@@ -6,10 +6,10 @@ HttpServer::HttpServer(Database *database, QObject *parent)
 {
     QHttpServer *httpServer = new QHttpServer();
     httpServer->route("/enter_door", [this](const QHttpServerRequest &request) {
-        qDebug() << "rcvd";
         for (auto pair : request.query().queryItems()) {
             if (pair.first == "rfid") {
                 auto rfid = pair.second;
+                qDebug() << "rcvd: " + rfid;
                 return this->database->isValid(rfid) ? "ok" : "no";
             }
         }

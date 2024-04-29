@@ -1,58 +1,97 @@
 #include <EtherCard.h>
+#include <Servo.h>
+#include <LiquidCrystal.h> 
 
-#define REQUEST_RATE 5000 // milliseconds
+LiquidCrystal lcd(6, 7, 5, 4, 3, 2);
 
-// ethernet interface mac address
+char c;
+String RFid;
+int count = 0;
+Servo myservo;
+
 static byte mymac[] = { 0x74, 0x69, 0x69, 0x2D, 0x30, 0x31 };
-// ethernet interface ip address
+
 static byte myip[] = { 169,254,88,42 };
-// gateway ip address
+
 static byte gwip[] = {169,254,88,41 };
-// remote website ip address and port
+
 static byte hisip[] = { 169,254,88,41 };
-// remote website name
+
 const char website[] PROGMEM = "169.254.88.41";
 
-// Ethernet buffer size
 byte Ethernet::buffer[700];
 
-static long timer;
 
-// called when the client request is complete
 static void my_result_cb (byte status, word off, word len) {
-  Serial.print("<<< reply ");
-  Serial.print(millis() - timer);
-  Serial.println(" ms");
-  Serial.println((const char*) Ethernet::buffer + off);
+  String res = (const char*) Ethernet::buffer + off;
+  if(res.charAt(res.length() - 1) == 'k')
+  {
+    lcd.setCursor(0, 1);
+    Serial.println("Valid TAG, Access Allowed!");
+    digitalWrite(8, HIGH);
+    myservo.write(180);
+    delay(3000);
+    myservo.write(0);  
+    digitalWrite(8, LOW);
+    lcd.print("Time: ");
+    printTime();
+  }
+  else
+  {
+    lcd.setCursor(0, 1);
+    lcd.print("Access Denied"); 
+    Serial.println("Invalid TAG, Access Denied");
+    delay(3000);        
+    myservo.write(0);
+  }
 }
 
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("\n[getStaticIP]");
-  // Begin Ethernet communication with buffer size and MAC address
+  myservo.attach(9);
+  myservo.write(0);
+  pinMode(8, OUTPUT); 
+  Serial.println("Scan your RFid TAG");
+  lcd.begin(16, 2);
+  lcd.print("Scan your RFid"); 
   ether.begin(sizeof Ethernet::buffer, mymac, SS);
-
-  // Configure static IP and gateway IP
   ether.staticSetup(myip, gwip);
-
   ether.copyIp(ether.hisip, hisip);
-  ether.printIp("Server: ", ether.hisip);
 
   while (ether.clientWaitingGw())
     ether.packetLoop(ether.packetReceive());
-  Serial.println("Gateway found");
-
-  timer = - REQUEST_RATE; // start timing out right away
 }
 
 void loop () {
   ether.packetLoop(ether.packetReceive());
 
-  if (millis() > timer + REQUEST_RATE) {
-    timer = millis();
-    Serial.println("\n>>> REQ");
-    ether.browseUrl(PSTR("/enter_door?rfid=1234567890"), "", website, my_result_cb);
+  handleInput();
+}
+
+void handleInput(){
+  while(Serial.available()>0)
+  {
+    digitalWrite(8, LOW);
+    RFid = Serial.readString();
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.println("RFID: " + RFid);
+
+    ether.browseUrl(PSTR("/enter_door?rfid="), RFid.c_str(), website, my_result_cb);    
   }
+}
+
+void printTime() {
+  unsigned long currentMillis = millis(); 
+  unsigned long seconds = currentMillis / 1000;
+  unsigned long minutes = seconds / 60;
+  unsigned long hours = minutes / 60;
+
+  lcd.print(hours);
+  lcd.print(":");
+  lcd.print(minutes % 60);
+  lcd.print(":");
+  lcd.print(seconds % 60);
 }
 
