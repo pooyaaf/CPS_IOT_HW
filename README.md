@@ -183,7 +183,23 @@ some random text.
 
 ## Administrator Client
 
-some random text.
+The following is a brief explanation on each of the *Administrator Client* files.
+
+- **cpsapplication**: This file defines the `Application` class within the `CPS` namespace. The constructor initializes objects for the main window, history window, and client, and establishes connections between signals and slots for various events, such as button clicks and server connections. The destructor deallocates memory for these objects. Additionally, it provides methods to show the main window, update the history window with data, and display the history window. Overall, the `Application` class manages the user interface and interactions for the application.
+
+- **cpsbutton**: This code defines the `Button` class within the `CPS` namespace. The constructor initializes a QPushButton with a specified text and sets its font size, height, and style sheet. The style sheet defines the appearance of the button, including text color, background color, and hover effect. Overall, the `Button` class creates customized buttons for use within the application.
+
+- **cpshistorywindow**: This code defines the `HistoryWindow` class in the `CPS` namespace, representing a window for displaying history data in an IoT monitoring system. In its constructor, it sets up the window's properties like size, title, icon, and background color, and initializes a `QListWidget` `_list` to display history entries. The `update` function populates this list with data provided in a JSON array, creating formatted strings for each entry and adding them to the list. The `show` function ensures the window is displayed when requested, while the `closeEvent` function clears the list when the window is closed to remove all history entries. Overall, this class manages the display and updating of a history window in the application.
+
+- **cpslabel**: This code defines the `Label` class within the `CPS` namespace, representing a customized label widget for the application. In its constructor, it initializes a QLabel with a specified text and sets properties such as font size, height, and margin. The label is configured to have a fixed height of 70 pixels and a margin of 10 pixels on all sides. Overall, the `Label` class creates styled labels for use within the application.
+
+- **cpsmainwindow**: This code defines the `MainWindow` class within the `CPS` namespace, representing the main window of an IoT monitoring system application. In its constructor, it sets up various widgets and layouts, including input fields for server address, username, and password, buttons for connecting to the server and viewing history, and labels for displaying user details such as username, date, and time. It also configures the window's properties like size, title, icon, and background color.
+The class provides several public methods for setting user details such as username, date, and time, as well as slots for handling UI interactions like button clicks. These slots dynamically update the UI based on user actions, such as enabling/disabling the connect button and displaying user details when available.
+Private helper functions are used to set up connections between UI elements, configure the global style of the window, set up the window layout, and handle the window's close event. Overall, this class manages the UI logic and behavior of the main window in the IoT monitoring system application.
+
+- **cpstextfield**: This file defines a custom text input field widget called `TextField` within the `CPS` namespace. It sets specific properties for the input field, including font size, height, text margins, placeholder text, and style sheet. The style sheet customizes the appearance of the input field, removing the default border, setting text and background colors, and defining different styles for hover and focus states. Overall, `TextField` provides a consistent and visually appealing text input field for use within the application.
+
+- **cpswindowsapitools**: This header file `cpswindowsapitools.h` defines a template function `setWindowsThemeToDark` within the `CPS` namespace. The function adjusts a window's appearance to a dark theme on Windows operating systems using the `DwmSetWindowAttribute` function from the Windows API. Conditional compilation directives ensure that the function is only compiled on Windows platforms. Overall, this header provides a utility for setting windows to dark mode on Windows systems.
 
 
 # Conclusion
