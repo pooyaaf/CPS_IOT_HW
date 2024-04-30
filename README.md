@@ -1,8 +1,8 @@
 # HW1 - CPS - Entry and Exit Management System IoT
 
 ### Table of Contents  
-- [Introduction](#introduction)  
-- [Background](#background)  
+- [Introduction](#introduction)
+- [Background](#background)
 - [Visual Results](#visual-results)
     - [Accept Scenario](#accept-scenario)
     - [Decline Scenario](#decline-scenario)
@@ -12,61 +12,48 @@
     - [Administrator Client](#administrator-client)  
 - [Conclusion](#conclusion) 
 
-<a name="introduction"/>
 
 ## Introduction
 
 izsodjfszo azsifszdj izsdj zpd
 
-<a name="background"/>
-
 ## Background
 
 some random text.
-
-<a name="visual-results"/>
 
 ## Visual Results
 
 some random text.
 
-<a name="accept-scenario"/>
-
 ## Accept Scenario
 
 some random text.
 
-<a name="decline-scenario"/>
 
 ## Decline Scenario
 
 some random text.
 
-<a name="code-explanation"/>
 
 ## Code Explanation
 
 some random text.
 
-<a name="proteusandarduino"/>
 
 ## Proteus and Arduino Uno Module
 
 some random text.
 
-<a name="server"/>
 
 ## Main Web Server
 
 some random text.
 
-<a name="client"/>
 
 ## Administrator Client
 
 some random text.
 
-<a name="conclusion"/>
 
 ## Conclusion
 
