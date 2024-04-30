@@ -1,0 +1,11 @@
+# ninja log v5
+2	2258	7361988453083888	Server_autogen/timestamp	ee9c2cfd5308ef05
+2	2258	7361988453083888	Server_autogen/mocs_compilation.cpp	ee9c2cfd5308ef05
+2	2258	7361988453083888	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Server_autogen/timestamp	ee9c2cfd5308ef05
+2	2258	7361988453083888	C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Server_autogen/mocs_compilation.cpp	ee9c2cfd5308ef05
+2264	6492	7361988495851515	CMakeFiles/Server.dir/database.cpp.obj	ed45dd0038f3b4fb
+2277	12638	7361988557670863	CMakeFiles/Server.dir/httpserver.cpp.obj	ccc580ed4e2fc0cf
+2259	20246	7361988634093588	CMakeFiles/Server.dir/Server_autogen/mocs_compilation.cpp.obj	a4df630ea50c015c
+2267	20793	7361988639594935	CMakeFiles/Server.dir/main.cpp.obj	30633185e39b2752
+2272	21704	7361988648673679	CMakeFiles/Server.dir/websocketserver.cpp.obj	8888fea138abaf0d
+21705	22430	7361988655867299	Server.exe	728f3e1d765c3fbe
