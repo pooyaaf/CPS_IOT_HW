@@ -31,7 +31,7 @@ The project involves setting up the hardware simulation in Proteus, implementing
 
 This project integrates several current industry concepts. Below is a brief overview of some of the key concepts involved:
 
-- Internet of Things (IoT): The Internet of Things (IoT) refers to the network of physical objects or "things" embedded with sensors, software, and other technologies that enable these objects to connect and exchange data with other devices and systems over the internet. IoT allows for the integration of the physical and digital worlds, enabling remote monitoring, control, and automation of various processes and activities. The concept of IoT has gained significant traction in recent years, with applications spanning across industries such as healthcare, manufacturing, transportation, and home automation.
+- Internet of Things (IoT): The Internet of Things refers to the network of physical objects or "things" embedded with sensors, software, and other technologies that enable these objects to connect and exchange data with other devices and systems over the internet. IoT allows for the integration of the physical and digital worlds, enabling remote monitoring, control, and automation of various processes and activities. The concept of IoT has gained significant traction in recent years, with applications spanning across industries such as healthcare, manufacturing, transportation, and home automation.
 
 - RFID (Radio Frequency Identification): RFID is a wireless technology that uses radio waves to identify and track objects, people, or animals. It uses readers and tags to transfer data via radio waves. A reader can communicate with a tag some distance away (between a few centimeters and 20 meters, depending on the type of RFID). Active RFID tags have batteries, which they can tap to send information to a reader. Passive RFID tags do not have batteries; they use a reader’s electromagnetic energy to communicate with the reader. There are also semi-passive RFID tags, meaning a battery runs the circuitry while communication is powered by the RFID reader. RFID is more expensive, bulkier and more prone to physical and electrical damages. Unlike barcodes, RFID can be read if they are not within the reader's line of sight.
 
@@ -75,16 +75,62 @@ Lastly, It's important to note the importance of the Qt framework in our project
 
 ## Visual Results
 
-some random text.
+Before we can describe our code and its components, we will demonstrate the result of this project. The demonstration includes both the scenarios where the user has/doesn't have access to open the door as well as the Proteus setup and configuration.
+
+To run the program, we first need to build and run the web server configuration in QT environment.
+
+![Server is Up!](./Images/server-up.png)
+
+We also need the Proteus configuration below which consists of the following modules: ENC28J60 (ethernet), LM016L (LCD), Servo motor, LED (x2 with resistors), Arduino Uno, Terminal Windows (optional), Not Gate. 
+
+![Proteus Config](./Images/proteus-configuration.png)
+
+Please also note to set the appropriate IP for the ENC28J60 module.
+
+![Ethernet Config](./Images/ethernet-config.png)
 
 ## Accept Scenario
 
-some random text.
+In our database, we will authorise all RFIDs with the following format. Note that you can change this code to your own liking.
+
+```
+Database::Database()
+{
+    for (int i = 0; i < 10; ++i) {
+        QJsonObject member;
+        member["username"] = "ali" + QString::number(i);
+        member["rfid"] = "123456789" + QString::number(i);
+        members.append(member);
+    }
+}
+```
+
+For instance, `1234567890` is a valid ID. As it is shown below, on valid inputs, the green led will turn on, the door will roate 90 degrees and the appropriate message is shown. Moreover, the time and rfid value are shown on the LCD module. 
+
+![Proteus Accept Scenario](./Images/accept-scenario.png)
+
+On the server side, if we have the admin requirements, we can successfully log in to our account.
+
+![Server Accept Scenario](./Images/server-accept-scenario.png)
+
+As an admin, we also have the privilege to observe users' activities. For example, we can see that there have been one successful and one unsucceful entry attemps at April 30, 2024 at 12:38 and 12:39 respectively.  
+
+![Server History](./Images/history.png)
+
+> **Note:** Please note that after we have had at least one succeful entry, the server interface will also show the last successful entry record.
+
+![Server User Entry Record](./Images/server-left-panel.png)
 
 
 ## Decline Scenario
 
-some random text.
+On another hand, on invalid inputs, the red led will turn on, the door will stay closed and the *Access Denied* message is shown. Moreover, the *Access Denied* and rfid value are shown on the LCD module. 
+
+![Proteus Decline Scenario](./Images/decline-scenario.png)
+
+On the server side, if we have don't have the admin requirements, we cannot successfully log in to our account.
+
+![Server Decline Scenario](./Images/server-accept-scenario.png)
 
 
 ## Code Explanation
@@ -110,44 +156,6 @@ some random text.
 ## Conclusion
 
 some random text.
-
-Radio Frequency Identification (RFID) uses readers and tags to transfer data via radio waves. A reader can communicate with a tag some distance away (between a few centimeters and 20 meters, depending on the type of RFID). Active RFID tags have batteries, which they can tap to send information to a reader. Passive RFID tags do not have batteries; they use a reader’s electromagnetic energy to communicate with the reader [^1].
-There are also semi-passive RFID tags, meaning a battery runs the circuitry while communication is powered by the RFID reader.
-
-RFID is more expensive, bulkier and more prone to physical and electrical damages. Unlike barcodes, RFID can be read if they are not within the reader's line of sight.
-
-### How Does RFID Work
-
-Every RFID system consists of three components: a scanning antenna, a transceiver and a transponder. When the scanning antenna and transceiver are combined, they are referred to as an RFID reader or interrogator. There are two types of RFID readers -- fixed readers and mobile readers. The RFID reader is a network-connected device that can be portable or permanently attached. It uses radio waves to transmit signals that activate the tag. Once activated, the tag sends a wave back to the antenna, where it is translated into data.
-
-The transponder is in the RFID tag itself. The read range for RFID tags varies based on factors including the type of tag, type of reader, RFID frequency and interference in the surrounding environment or from other RFID tags and readers. Tags that have a stronger power source also have a longer read range [^2].
-
-### RFID Use in Industries
-
-- Retail
-- Pharmaceutical and Health Care
-- Airline baggage
-- Passport
-- Libraries
-- Animal tagging
-
-### RFID Use Cases
-
-- Item-level inventory
-- Tracking and monitoring
-- Timing
-- Management material
-- Logistics & supply chain visibility
-
-### What are the Types of RFID Systems
-
-- Low-frequency RFID systems
-- High-frequency RFID system
-- UHF RFID systems
-- Microwave RFID systems
-
-[^1]: [RFID Explained](<https://medium.com/lansaar/rfid-explained-970e9e0b13d4#:~:text=Radio%20Frequency%20Identification%20(RFID)%20uses,send%20information%20to%20a%20reader.>).
-[^2]: [RFID ](https://www.techtarget.com/iotagenda/definition/RFID-radio-frequency-identification).
 
 ---
 
