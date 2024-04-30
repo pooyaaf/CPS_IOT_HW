@@ -1,12 +1,56 @@
 # HW1 - CPS - Entry and Exit Management System IoT
 
-## RFID Explained
+### Table of Contents  
+- [Introduction](#introduction)  
+- [Background](#background)  
+- [Visual Results](#result)  
+    - [Accept Scenario](#acceptscenario)
+    - [Decline Scenario](#declinescenario)
+- [Code Explanation](#codeexplanation) 
+    - [Proteus and Arduino Uno Module](#proteusandarduino)  
+    - [Main Web Server](#server)
+    - [Administrator Client](#client)  
+- [Conclusion](#conclusion)  
+
+
+<a name="introduction"/>
+## Introduction
+
+izsodjfszo azsifszdj izsdj zpd
+
+<a name="background"/>
+## Background
+
+<a name="result"/>
+## Visual Results
+
+<a name="acceptscenario"/>
+## Accept Scenario
+
+<a name="declinescenario"/>
+## Decline Scenario
+
+<a name="codeexplanation"/>
+## Code Explanation
+
+<a name="proteusandarduino"/>
+## Proteus and Arduino Uno Module
+
+<a name="server"/>
+## Main Web Server
+
+<a name="client"/>
+## Administrator Client
+
+<a name="conclusion"/>
+## Conclusion
 
 Radio Frequency Identification (RFID) uses readers and tags to transfer data via radio waves. A reader can communicate with a tag some distance away (between a few centimeters and 20 meters, depending on the type of RFID). Active RFID tags have batteries, which they can tap to send information to a reader. Passive RFID tags do not have batteries; they use a reader’s electromagnetic energy to communicate with the reader [^1].
 There are also semi-passive RFID tags, meaning a battery runs the circuitry while communication is powered by the RFID reader.
 
 RFID is more expensive, bulkier and more prone to physical and electrical damages. Unlike barcodes, RFID can be read if they are not within the reader's line of sight.
 
+<a name="work"/>
 ### How Does RFID Work
 
 Every RFID system consists of three components: a scanning antenna, a transceiver and a transponder. When the scanning antenna and transceiver are combined, they are referred to as an RFID reader or interrogator. There are two types of RFID readers -- fixed readers and mobile readers. The RFID reader is a network-connected device that can be portable or permanently attached. It uses radio waves to transmit signals that activate the tag. Once activated, the tag sends a wave back to the antenna, where it is translated into data.
