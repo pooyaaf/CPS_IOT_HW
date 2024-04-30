@@ -7,13 +7,13 @@
     - [Accept Scenario](#accept-scenario)
     - [Decline Scenario](#decline-scenario)
 - [Code Explanation](#code-explanation) 
-    - [Proteus and Arduino Uno Module](#proteus-and-arduino)  
+    - [Proteus and Embedded Modules](#proteus-and-arduino)  
     - [Main Web Server](#main-web-server)
     - [Administrator Client](#administrator-client)  
 - [Conclusion](#conclusion) 
 
 
-## Introduction
+# Introduction
 
 The goal of this project is to implement a system for managing entry and exit based on the Internet of Things (IoT) for a hypothetical company. The system consists of the following components:
 
@@ -27,7 +27,7 @@ The overall process works as follows: When an individual approaches the entrance
 
 The project involves setting up the hardware simulation in Proteus, implementing the web server and monitoring application using Qt framework in C++, and integrating all components. Additionally, there are bonus tasks like measuring end-to-end delays and using WebSocket for communication between the embedded system and the web server.
 
-## Background
+# Background
 
 This project integrates several current industry concepts. Below is a brief overview of some of the key concepts involved:
 
@@ -73,7 +73,7 @@ Incorporating a monitoring system in this project offers several advantages:
 
 Lastly, It's important to note the importance of the Qt framework in our project. This framework provides a comprehensive set of tools and libraries that are well-suited for developing the web server and monitoring application components of this project. Its cross-platform support ensures the applications can run on multiple operating systems without significant code changes. Qt's networking and web development modules simplify the implementation of the HTTP and WebSocket communication protocols required for the web server and client-server interactions. Additionally, Qt's GUI development capabilities enable the creation of a user-friendly monitoring application interface.
 
-## Visual Results
+# Visual Results
 
 Before we can describe our code and its components, we will demonstrate the result of this project. The demonstration includes both the scenarios where the user has/doesn't have access to open the door as well as the Proteus setup and configuration.
 
@@ -88,6 +88,8 @@ We also need the Proteus configuration below which consists of the following mod
 Please also note to set the appropriate IP for the ENC28J60 module.
 
 ![Ethernet Config](./Images/ethernet-config.png)
+
+Lastly, note that we also need to build and run the client (administrator) configuration in QT environment if we want to monitor users' activities.
 
 ## Accept Scenario
 
@@ -117,7 +119,7 @@ As an admin, we also have the privilege to observe users' activities. For exampl
 
 ![Server History](./Images/history.png)
 
-> **Note:** Please note that after we have had at least one succeful entry, the server interface will also show the last successful entry record.
+> **Note:** Please note that after we have had at least one succeful entry, the server interface will also show the last successful entry record on the left side.
 
 ![Server User Entry Record](./Images/server-left-panel.png)
 
@@ -133,15 +135,46 @@ On the server side, if we have don't have the admin requirements, we cannot succ
 ![Server Decline Scenario](./Images/server-accept-scenario.png)
 
 
-## Code Explanation
+# Code Explanation
 
-some random text.
+Our coding structure consists of four main foulders *Client, Embedded, Proteus, Server* which represent their respective roles in our application. Aside from the *Proteus* folder which includes the required simulation data for the application, other code files need to be built and compiled. 
 
+## Proteus and Embedded Modules
 
-## Proteus and Arduino Uno Module
+This section consists of one *main.ino* file. The following is a short explanation on it. 
 
-some random text.
+- Library Includes:
+The code includes three libraries: EtherCard.h for Ethernet functionality, Servo.h for controlling the servo motor, and LiquidCrystal.h for interfacing with the LCD display.
 
+- LiquidCrystal Object Initialization:
+An instance of the LiquidCrystal class is created, specifying the pins to which the LCD is connected.
+
+- Global Variables:
+    - *RFid*: A string variable to store the RFID tag data.
+    - *count*: An integer variable used for counting purposes.
+    - *myservo*: A Servo object to control the servo motor.
+
+- MAC and IP Address Configuration:
+Configuration of MAC and IP addresses for the Ethernet module.
+
+- Static Callback Function (my_result_cb):
+A callback function that handles the response from a web server. It parses the response and performs actions based on the received data, such as displaying messages on the LCD and controlling the servo motor.
+
+- Setup Function:
+Initialization of serial communication, servo motor, LCD display, Ethernet module, and configuration of IP addresses.
+A loop that waits for the Ethernet module to establish a connection.
+
+- Loop Function:
+    - Calls *ether.packetLoop()* to handle incoming Ethernet packets.
+    - Calls *handleInput()* function to handle input from the serial port.
+
+- handleInput Function:
+    - Checks if there is data available on the serial port.
+    - If data is available, it reads the RFID tag data.
+    - Clears the LCD display and prints the RFID tag data.
+    - Constructs a URL query string containing the RFID tag data and the time delay since the last RFID scan.
+    - Calls *ether.browseUrl()* to send an HTTP request to a web server with the RFID data as parameters.
+    - Passes the *my_result_cb* function as a callback to handle the server response.
 
 ## Main Web Server
 
@@ -153,7 +186,7 @@ some random text.
 some random text.
 
 
-## Conclusion
+# Conclusion
 
 some random text.
 
