@@ -3,6 +3,7 @@ C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/build/Desktop_Qt_6_7_0
   C:/Qt/6.7.0/mingw_64/include/QtCore/QFlags \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QJsonArray \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
+  C:/Qt/6.7.0/mingw_64/include/QtCore/QJsonObject \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QObject \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QSharedDataPointer \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QString \
@@ -63,6 +64,7 @@ C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/build/Desktop_Qt_6_7_0
   C:/Qt/6.7.0/mingw_64/include/QtCore/qiterator.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qjsonarray.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qjsondocument.h \
+  C:/Qt/6.7.0/mingw_64/include/QtCore/qjsonobject.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qjsonvalue.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qlatin1stringview.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qlist.h \

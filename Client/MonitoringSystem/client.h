@@ -1,10 +1,10 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
-#include <QObject>
-
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QJsonObject>
+#include <QObject>
 #include <QtCore/QObject>
 #include <QtWebSockets/QWebSocket>
 
@@ -29,6 +29,8 @@ private Q_SLOTS:
     void onTextMessageReceived(QString message);
 
 private:
+    void setLastUser(QJsonArray history);
+
     QWebSocket m_webSocket;
     bool m_debug;
     QString username, password;

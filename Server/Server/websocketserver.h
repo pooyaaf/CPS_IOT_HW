@@ -21,6 +21,9 @@ public:
 Q_SIGNALS:
     void closed();
 
+public Q_SLOTS:
+    void onNewUser(QJsonObject data);
+
 private Q_SLOTS:
     void onNewConnection();
     void processTextMessage(QString message);
@@ -32,6 +35,7 @@ private:
     QList<QWebSocket *> m_clients;
     bool m_debug;
     Database *database;
+
     inline static const QString USERNAME = "admin", PASSWORD = "admin";
 };
 

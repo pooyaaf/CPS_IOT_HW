@@ -12,6 +12,9 @@ class HttpServer : public QObject
 public:
     explicit HttpServer(Database *database, QObject *parent = nullptr);
 
+Q_SIGNALS:
+    void newUser(QJsonObject lastLog);
+
 private:
     Database *database;
 };

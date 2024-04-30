@@ -11,26 +11,36 @@ Database::Database()
     }
 }
 
-bool Database::isValid(QString rfid)
+QString Database::getUsername(const QString &rfid)
 {
     for (int i = 0; i < members.size(); i++)
-        if (members.at(i)["rfid"] == rfid) {
-            addLogInTime(members.at(i)["username"].toString());
-            return true;
-        }
-
-    addLogInTime("Not Found!");
-    return false;
+        if (members.at(i)["rfid"] == rfid)
+            return members.at(i)["username"].toString();
+    return QString();
 }
 
-void Database::addLogInTime(const QString username)
+bool Database::isValid(QString rfid)
+{
+    return getUsername(rfid) != "";
+}
+
+void Database::addLogInTime(const QString rfid)
 {
     auto currentTime = QDateTime::currentDateTime();
+    auto userName = getUsername(rfid);
+    if (userName == "")
+        userName = "Not Found!";
+
     QJsonObject log;
     log["date"] = currentTime.toString("MM/dd/yyyy");
     log["time"] = currentTime.toString("hh:mm");
-    log["username"] = username;
+    log["username"] = userName;
     data.append(log);
+}
+
+QJsonObject Database::getLastLog()
+{
+    return data.last().toObject();
 }
 
 QString Database::getLogs()

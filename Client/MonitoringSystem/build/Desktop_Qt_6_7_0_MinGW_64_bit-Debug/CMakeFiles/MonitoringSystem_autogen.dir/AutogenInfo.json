@@ -364,12 +364,6 @@
 			"MU",
 			"EWIEGA46WW/moc_cpswindowsapitools.cpp",
 			null
-		],
-		[
-			"C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/echoclient.h",
-			"MU",
-			"EWIEGA46WW/moc_echoclient.cpp",
-			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -479,11 +473,6 @@
 		],
 		[
 			"C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/cpstextfield.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/echoclient.cpp",
 			"MU",
 			null
 		],

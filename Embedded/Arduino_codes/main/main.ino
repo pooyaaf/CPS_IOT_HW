@@ -72,7 +72,7 @@ void loop () {
 }
 
 void handleInput(){
-  while(Serial.available()>0)
+  if(Serial.available() > 0)
   {
     digitalWrite(8, LOW);
     RFid = Serial.readString();
@@ -83,17 +83,3 @@ void handleInput(){
     ether.browseUrl(PSTR("/enter_door?rfid="), RFid.c_str(), website, my_result_cb);    
   }
 }
-
-void printTime() {
-  unsigned long currentMillis = millis(); 
-  unsigned long seconds = currentMillis / 1000;
-  unsigned long minutes = seconds / 60;
-  unsigned long hours = minutes / 60;
-
-  lcd.print(hours);
-  lcd.print(":");
-  lcd.print(minutes % 60);
-  lcd.print(":");
-  lcd.print(seconds % 60);
-}
-

@@ -9,12 +9,14 @@ HttpServer::HttpServer(Database *database, QObject *parent)
         auto req = request.query().queryItems().at(0);
         if (req.first == "rfid") {
             auto rfid = req.second;
-            qDebug() << "rcvd: " + rfid;
             auto time = QDateTime::currentDateTime().toString("hh:mm");
-            return time + (this->database->isValid(rfid) ? "ok" : "no");
+            bool isVlid = this->database->isValid(rfid);
+            this->database->addLogInTime(rfid);
+            Q_EMIT newUser(this->database->getLastLog());
+            return time + (isVlid ? "ok" : "no");
         }
 
-        return QString("no");
+        throw QException();
     });
 
     httpServer->afterRequest([](QHttpServerResponse &&resp) {

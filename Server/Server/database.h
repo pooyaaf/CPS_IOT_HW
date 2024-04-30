@@ -10,11 +10,14 @@ class Database
 {
 public:
     Database();
-    void addLogInTime(const QString username);
+    void addLogInTime(const QString rfid);
     QString getLogs();
+    QJsonObject getLastLog();
     bool isValid(QString rfid);
 
 private:
+    QString getUsername(const QString &rfid);
+
     QJsonArray data;
     QJsonArray members;
 };

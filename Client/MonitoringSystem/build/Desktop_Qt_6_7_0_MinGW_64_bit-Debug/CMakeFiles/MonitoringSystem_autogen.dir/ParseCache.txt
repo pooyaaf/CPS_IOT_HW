@@ -2639,6 +2639,7 @@ C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/client.h
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/QFlags
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/QJsonArray
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument
+ mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/QJsonObject
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/QObject
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/QSharedDataPointer
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/QString
@@ -2699,6 +2700,7 @@ C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/client.h
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/qiterator.h
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/qjsonarray.h
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/qjsondocument.h
+ mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/qjsonobject.h
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/qjsonvalue.h
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/qlatin1stringview.h
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/qlist.h

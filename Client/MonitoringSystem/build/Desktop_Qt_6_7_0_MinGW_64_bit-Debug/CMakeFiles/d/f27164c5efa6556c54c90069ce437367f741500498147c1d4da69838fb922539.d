@@ -664,6 +664,4 @@ MonitoringSystem_autogen/timestamp: \
   C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/cpstextfield.cpp \
   C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/cpstextfield.h \
   C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/cpswindowsapitools.h \
-  C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/echoclient.cpp \
-  C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/echoclient.h \
   C:/Users/AliGH/Desktop/CPS_IOT_HW/Client/MonitoringSystem/main.cpp

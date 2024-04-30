@@ -15,7 +15,8 @@ public:
     explicit HistoryWindow(QWidget *parent = nullptr);
     ~HistoryWindow();
 
-    void show(const QJsonArray &array);
+    void show();
+    void update(const QJsonArray &array);
 
 private:
     void closeEvent(QCloseEvent * event) override;

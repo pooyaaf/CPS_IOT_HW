@@ -32,14 +32,13 @@ void Application::show()
 
 void Application::updateHistoryWindow(QJsonArray data)
 {
-    qDebug() << "update";
-    _history->show(data);
+    _history->update(data);
 }
 
 void Application::showHistoryWindow()
 {
     setWindowsThemeToDark<HistoryWindow>(*_history);
-    _client->getHistory();
+    _history->show();
 }
 
 } // end of CPS

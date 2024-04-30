@@ -17,8 +17,7 @@ void Client::connectToServer(const QString &address,
     QUrl url;
     url.setPort(1234);
     url.setScheme("ws");
-    //url.setHost(address);
-    url.setHost("localhost");
+    url.setHost(address);
 
     this->username = username;
     this->password = password;
@@ -46,8 +45,7 @@ void Client::onConnected()
     if (m_debug)
         qDebug() << "WebSocket connected";
     Q_EMIT connectionChanged(false);
-    //auto message = "login|"+username + "|" + password;
-    auto message = QString("login|admin|admin");
+    auto message = "login|" + username + "|" + password;
     m_webSocket.sendTextMessage(message);
     if (m_debug)
         qDebug() << "send: " + message;
@@ -59,19 +57,33 @@ QJsonArray Client::getHistory()
     return cachedData;
 }
 
+void Client::setLastUser(QJsonArray history)
+{
+    if (!history.empty()) {
+        auto last = history.last().toObject();
+        Q_EMIT newUser(last["username"].toString(),
+                       last["date"].toString(),
+                       last["time"].toString());
+    }
+}
+
 void Client::onTextMessageReceived(QString message)
 {
     if (m_debug)
         qDebug() << "Message received:" << message;
     auto rcvd_msg = message.split("|");
     if (rcvd_msg[0] == "login") {
-        if (rcvd_msg[1] == "ok") {
-            //TODO
-        } else
+        if (rcvd_msg[1] == "ok")
+            setLastUser(getHistory());
+        else
             m_webSocket.close();
     } else if (rcvd_msg[0] == "log") {
         cachedData = QJsonDocument::fromJson(rcvd_msg[1].toUtf8()).array();
-        qDebug() << "rcvd logs";
+        setLastUser(cachedData);
+        Q_EMIT onHistoryUpdated(cachedData);
+    } else if (rcvd_msg[0] == "new") {
+        cachedData.append(QJsonDocument::fromJson(rcvd_msg[1].toUtf8()).object());
+        setLastUser(cachedData);
         Q_EMIT onHistoryUpdated(cachedData);
     }
 }

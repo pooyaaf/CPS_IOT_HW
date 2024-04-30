@@ -21,7 +21,7 @@ WebsocketServer::WebsocketServer(Database *database, quint16 port, bool debug, Q
                 &WebsocketServer::onNewConnection);
         connect(m_pWebSocketServer, &QWebSocketServer::closed, this, &WebsocketServer::closed);
     } else {
-        qDebug() << "Error listening...";
+        qWarning() << "Error listening...";
     }
 }
 
@@ -59,10 +59,16 @@ void WebsocketServer::processTextMessage(QString message)
         } else if (recvd_mesg[0] == "log") {
             pClient->sendTextMessage("log|" + database->getLogs());
         } else {
-            qDebug() << "not handle exception!";
+            qWarning() << "not handle exception!";
             throw new QException();
         }
     }
+}
+
+void WebsocketServer::onNewUser(QJsonObject data)
+{
+    foreach (auto &client, m_clients)
+        client->sendTextMessage("new|" + QString(QJsonDocument(data).toJson()));
 }
 
 void WebsocketServer::processBinaryMessage(QByteArray message)

@@ -16,7 +16,8 @@ int main(int argc, char *argv[])
     auto websocketServer = new WebsocketServer(&database, 1234, true);
     QObject::connect(websocketServer, &WebsocketServer::closed, &a, &QCoreApplication::quit);
 
-    new HttpServer(&database);
+    auto httpServer = new HttpServer(&database);
+    QObject::connect(httpServer, &HttpServer::newUser, websocketServer, &WebsocketServer::onNewUser);
 
     return a.exec();
 }

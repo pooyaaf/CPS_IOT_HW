@@ -6,4 +6,3 @@
 #include "EWIEGA46WW/moc_cpslabel.cpp"
 #include "EWIEGA46WW/moc_cpsmainwindow.cpp"
 #include "EWIEGA46WW/moc_cpstextfield.cpp"
-#include "EWIEGA46WW/moc_echoclient.cpp"
