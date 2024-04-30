@@ -1,9 +1,11 @@
 #ifndef HTTPSERVER_H
 #define HTTPSERVER_H
 
+#include <QElapsedTimer>
 #include <QObject>
 #include <QtHttpServer/QHttpServer>
 #include <QtHttpServer/QHttpServerResponse>
+
 #include "database.h"
 
 class HttpServer : public QObject

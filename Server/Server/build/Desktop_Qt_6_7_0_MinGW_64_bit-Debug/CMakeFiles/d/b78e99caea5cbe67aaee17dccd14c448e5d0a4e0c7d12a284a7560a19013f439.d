@@ -3,6 +3,7 @@ Server_autogen/timestamp: \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QCryptographicHash \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QDateTime \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QDeadlineTimer \
+  C:/Qt/6.7.0/mingw_64/include/QtCore/QElapsedTimer \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QFlags \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QHash \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QIODevice \

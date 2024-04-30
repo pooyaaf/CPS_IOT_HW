@@ -4,6 +4,7 @@ C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/websocketserver.cpp
 C:/Users/AliGH/Desktop/CPS_IOT_HW/Server/Server/httpserver.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/QDateTime
+ mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/QElapsedTimer
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/QFlags
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/QJsonArray
  mdp:C:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument

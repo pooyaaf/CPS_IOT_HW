@@ -74,12 +74,15 @@ void loop () {
 void handleInput(){
   if(Serial.available() > 0)
   {
+    auto current = millis();
     digitalWrite(8, LOW);
     RFid = Serial.readString();
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.println("RFID: " + RFid);
 
-    ether.browseUrl(PSTR("/enter_door?rfid="), RFid.c_str(), website, my_result_cb);    
+    char buffer[100];
+    sprintf(buffer, "%s&delay=%d", RFid.c_str(), millis() - current);
+    ether.browseUrl(PSTR("/enter_door?rfid="), buffer, website, my_result_cb);    
   }
 }
