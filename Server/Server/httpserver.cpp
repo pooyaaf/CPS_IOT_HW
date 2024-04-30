@@ -10,10 +10,11 @@ HttpServer::HttpServer(Database *database, QObject *parent)
         if (req.first == "rfid") {
             auto rfid = req.second;
             qDebug() << "rcvd: " + rfid;
-            return this->database->isValid(rfid) ? "ok" : "no";
+            auto time = QDateTime::currentDateTime().toString("hh:mm");
+            return time + (this->database->isValid(rfid) ? "ok" : "no");
         }
 
-        return "no";
+        return QString("no");
     });
 
     httpServer->afterRequest([](QHttpServerResponse &&resp) {

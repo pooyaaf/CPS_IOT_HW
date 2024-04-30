@@ -19,7 +19,7 @@ bool Database::isValid(QString rfid)
             return true;
         }
 
-    addLogInTime("not found!");
+    addLogInTime("Not Found!");
     return false;
 }
 
